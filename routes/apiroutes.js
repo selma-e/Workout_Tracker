@@ -1,3 +1,5 @@
+const db = require("../models");
+
 module.exports = function (app) {
     app.get("/exercise", (req, res) => {
         db.exercise.find({})
