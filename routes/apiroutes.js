@@ -1,17 +1,7 @@
 const db = require("../models");
 
 module.exports = function (app) {
-    app.get("/exercise", (req, res) => {
-        db.exercise.find({})
-            .then(dbExercise => {
-                res.json(dbExercise);
-            })
-            .catch(err => {
-                res.json(err);
-            });
-    });
-
-    app.get("/workout", (req, res) => {
+    app.get("/api/workouts/range", (req, res) => {
         db.workout.find({})
             .then(dbWorkout => {
                 res.json(dbWorkout);
@@ -21,9 +11,8 @@ module.exports = function (app) {
             });
     });
 
-    app.get("/populatedworkout", (req, res) => {
+    app.get("/api/workouts", (req, res) => {
         db.workout.find({})
-            .populate("exercise")
             .then(dbWorkout => {
                 res.json(dbWorkout);
             })
@@ -31,4 +20,14 @@ module.exports = function (app) {
                 res.json(err);
             });
     });
+
+    // db.workout.aggregate([
+    //     {
+    //       $exercise: {
+    //         duration: { $sum: "$quizzes"},
+
+    //         examTotal: { $sum: [ "$final", "$midterm" ] }
+    //       }
+    //     }
+    //  ])
 };
