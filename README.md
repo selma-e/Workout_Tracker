@@ -1,61 +1,38 @@
-# Unit 17 NoSQL Homework: Workout Tracker
+# Selma's HW17 Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+## Description:
 
-## User Story
+In this activity, I am building a quiz which is initated with the click of a button. Then I iterate through the questions and answer choices. The user will then be alerted whether their answer is correct or incorrect. I utilized a timer to keep track of time during this quiz (60 seconds) and added 10 second penalties for incorrect answers. Every correct answer earns you 1 point, and every incorrect answer earns you 0 points. At the end the user will be prompted to enter their intials to get placed on a numerically descending ordered high scores scoreboard. I have also spliced the high scoreboard to only show a maximum of 10 entries so it doesn't get too long. Once the user enters their score, they will be prompted to go back to render the start screen or clear the highscores. If the user does not enter any initials, they will be warned that they need to do so.
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+I can imagine this real world quiz scenario happens during password security question scenarios to verify that you have correctly answered to pass on to the next step.
 
-## Business Context
+## A couple of things I learned in this:
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+- I challenged myself in this homework by not writing anything in HTML. I created all my elements, text content, classes, etc in my JavaScript file.
+- event.preventDefault(); is pretty freaking important.
+- I learned how to use key and value pairs to address each prompt, it's answer choices, and the correct answer.
+- Learned timers, and needed to clear time intervals for some buttons to make sure time wouldn't keep running.
+- .style = "display: none;"; to take away the display in conjunction with a timer.
+- Utilized Local Sorage.
+- I could not get the last quiz question to display the 'correct' or 'incorrect' under the question. It carried over into the entry of the initials screen.
 
-## Acceptance Criteria
+## Installation:
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+- If you need to pull my code for this homework, please visit my Github repository at: https://github.com/selma-e/Workout_Tracker
+- If you want to see the final webpage for my code, please visit my deployed website at: https://selma-e.github.io/hw4_quiz_score_board/
 
-The user should be able to:
+## Usage:
 
-  * Add exercises to the most recent workout plan.
+<img src="./Assets/screenshot1.png">
+<img src="./Assets/screenshot2.png">
+<img src="./Assets/screenshot3.png">
+<img src="./Assets/screenshot4.png">
 
-  * Add new exercises to a new workout plan.
+## Resources Used/Credits:
 
-  * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+- https://getbootstrap.com/docs/4.5/getting-started/introduction/
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- https://www.w3schools.com/js/js_timing.asp
+- https://www.w3schools.com/js/js_htmldom_eventlistener.asp
 
-  * View the total duration of each workout from the past seven workouts on the `stats` page.
-
-> **Important:** Look into using a MongoDB aggregate function to dynamically add up and return the total duration for each workout. Check out the [MongoDB documentation on the $addFields](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/), the [MongoDB documentation on the $sum operator](https://docs.mongodb.com/manual/reference/operator/aggregation/sum/), and the [Mongoose documentation on aggregate functions](https://mongoosejs.com/docs/api.html#aggregate_Aggregate) to learn how it can be accomplished.
-
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
-
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
-
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
-
-## Commit Early and Often
-
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
-
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
-
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
-
-Follow these guidelines for committing:
-
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
-
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
-
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
-
-* Test your application before you commit to ensure functionality at every step in the development process.
-
-We want you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the GitHub repository
+© 2020 Selma Elgabalawy | UW-SEA-FSF-PT-08-2020-U-C-TTh
