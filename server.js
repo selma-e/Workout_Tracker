@@ -8,21 +8,27 @@ const app = express();
 
 app.use(logger("dev"));
 
-app.use(express.urlencoded({
-    extended: true
-}));
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 app.use(express.json());
 
 app.use(express.static("public"));
 require("./routes/htmlroutes")(app);
 require("./routes/apiroutes")(app);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/vast-atoll-24354",
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true
-});
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+);
 
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
+  console.log(`App running on port ${PORT}!`);
 });
